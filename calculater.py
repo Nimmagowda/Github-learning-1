@@ -7,50 +7,40 @@ class Calculator:
         print("4.division")
         print("5.exit")
 
-    def input(self):
-        a = int(input("enter a number"))
-        b = int(input("enter b number"))
-
-
-    def add(self,input):
-        print(input())
-        #a = int(input("enter a number"))
-        #b = int(input("enter b number"))
+    def add(self,a,b):
         return a + b
 
-    def sub(self,input):
-        #a = int(input("enter a number"))
-        #b = int(input("enter b number"))
+    def sub(self,a,b):
         return a - b
 
-    def mul(self,input):
-        #a = int(input("enter a number"))
-        #b = int(input("enter b number"))
+    def mul(self,a,b):
         return a * b
     
-    def div(self,input):
-        #a = int(input("enter a number"))
-        #b = int(input("enter b number"))
+    def div(self,a,b):
+        if a == 0 or b == 0 :
+            print("0 is not divisiable")
         return a / b
 
 c1 = Calculator()
-#c1.add()
+a = int(input("enter a number"))
+b = int(input("enter b number"))
 
 while True:
-    print(c1.calci_options())
+    c1.calci_options()
     choice = int(input("enter your choice"))
     if choice == 1:
-        #print(c1.input())
-        print(c1.add())
+        print(c1.add(a,b))
 
     elif choice == 2:
-        print(c1.sub())
+        print(c1.sub(a,b))
     elif choice == 3:
-        print(c1.mul())
+        print(c1.mul(a,b))
     elif choice == 4:
-        print(c1.div())
+        print(c1.div(a,b))
     elif choice == 5:
         print("exited")
         break
+    else:
+        print("invalid choice")
     
 
