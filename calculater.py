@@ -19,15 +19,25 @@ class Calculator:
     def div(self,a,b):
         if a == 0 or b == 0 :
             print("0 is not divisiable")
-        return a / b
+        else:
+            return a / b
 
 c1 = Calculator()
-a = int(input("enter a number"))
-b = int(input("enter b number"))
+
+
 
 while True:
     c1.calci_options()
     choice = int(input("enter your choice"))
+
+    if choice == 5:
+        print("exited")
+        break
+
+    elif choice in (1,2,3,4):
+        a = int(input("enter a number"))
+        b = int(input("enter b number"))
+        
     if choice == 1:
         print(c1.add(a,b))
 
@@ -37,9 +47,7 @@ while True:
         print(c1.mul(a,b))
     elif choice == 4:
         print(c1.div(a,b))
-    elif choice == 5:
-        print("exited")
-        break
+
     else:
         print("invalid choice")
     
