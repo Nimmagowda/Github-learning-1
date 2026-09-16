@@ -3,12 +3,12 @@ class Shop:#creating class with name of shop
         pass
     
     def item_details(self):
-        items = {
+        products = {
             "apereals": {
-                "shirt":{ "price":500,"qt":10},#this is aperals of shop you can by from this 
-                "pant": { "price":800,"qt":10},
-                "shoes": { "price":1000,"qt":10},
-                "spects": { "price":1299,"qt":10},
+                "shirt":500,#this is aperals of shop you can by from this 
+                "pant": 800,
+                "shoes": 1000,
+                "spects": 1299,
             },
 
             "grocry" : {
@@ -20,28 +20,49 @@ class Shop:#creating class with name of shop
             "sports" : {
                 "bats": [2000,10],
                 "balls": [500,20],
-                "stumps":[3000,4"sects"]
-            }
+                "stumps":[3000,4]
+            },
+
         }
+        print(products)
+        return products
+
     def add_cart(self):
-        cart ={}
-        select =input("select your items")
-        for select in c1.items :
-            cart["select"] = c1.items["select"]
-            print("added your items to cart sucessfuly")
+        self.item_details()
+        for i in range(1,5-1):
+            select =input("select your items : ")
+            self.cart ={}
+        
+            for category,products in self.item_details().items():
+                if select in products:
+                    self.cart[select] = products[select]
+                    print("==Added your items to cart sucessfuly== : ")
+                    break
+
+            else:
+                print("product not found : ")
+
+        #print(self.cart)
+                
+        return self.cart
+    #def total_payment(self):
+        #print(self.cart{})
+
 c1=Shop()
 
 while True:
-    print("1 iems details")
-    print("adding to cart")
-    choice =int(input("enter your choice"))
+    print("1 : iems details : ")
+    print("2 : adding to cart : ")
+    print("3 : total_items")
+    print("5 : exit : ")
+    choice =int(input("enter your choice : "))
 
-    if choice == 5:
-        print("exiting")
-        break
-    elif choice == 1:
-        print(c1.item_details())
+    if choice == 1:
+        c1.item_details()
     elif choice == 2:
         print(c1.add_cart())
-
-    
+    elif choice == 3:
+        print(c1.total_payment())
+    elif choice == 5:
+            print("exiting")
+            break
