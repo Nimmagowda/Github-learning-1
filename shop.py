@@ -1,6 +1,9 @@
+#import numpy as np
 class Shop:#creating class with name of shop
     def __init__(self):
-        pass
+        self.cart = {}
+        self.t_amount = t_amount
+
     
     def item_details(self):
         products = {
@@ -12,15 +15,15 @@ class Shop:#creating class with name of shop
             },
 
             "grocry" : {
-                "dry_fruits": [599,20],
+                "dry_fruits": 599,
                 "vegetables": 299,
-                "cholates": [300,40]
+                "cholates": 300,
             },
 
             "sports" : {
-                "bats": [2000,10],
-                "balls": [500,20],
-                "stumps":[3000,4]
+                "bats": 2000,
+                "balls": 500,
+                "stumps":3000,
             },
 
         }
@@ -29,24 +32,28 @@ class Shop:#creating class with name of shop
 
     def add_cart(self):
         self.item_details()
-        for i in range(1,5-1):
+        for i in range(1,3):
             select =input("select your items : ")
-            self.cart ={}
         
             for category,products in self.item_details().items():
                 if select in products:
                     self.cart[select] = products[select]
                     print("==Added your items to cart sucessfuly== : ")
-                    break
-
+                    #print(self.cart)
+                    break    
             else:
-                print("product not found : ")
-
-        #print(self.cart)
-                
+                print("product not found : ")         
         return self.cart
-    #def total_payment(self):
-        #print(self.cart{})
+    def total_items(self):
+        print(self.cart)
+        """amount =np.array[self.cart.values()]
+        print(np.amount)
+        self.t_amount = 0
+        for a in self.cart.values():
+            self.t_amount += a
+            break
+        print(self.t_amount)
+        return self.t_amount"""
 
 c1=Shop()
 
@@ -62,7 +69,9 @@ while True:
     elif choice == 2:
         print(c1.add_cart())
     elif choice == 3:
-        print(c1.total_payment())
+        print(c1.total_items())
+        a = o
+        
     elif choice == 5:
             print("exiting")
             break
