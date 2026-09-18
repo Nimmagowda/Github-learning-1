@@ -2,7 +2,6 @@
 class Shop:#creating class with name of shop
     def __init__(self):
         self.cart = {}
-        self.t_amount = t_amount
 
     
     def item_details(self):
@@ -32,7 +31,7 @@ class Shop:#creating class with name of shop
 
     def add_cart(self):
         self.item_details()
-        for i in range(1,3):
+        for i in range(1,5):
             select =input("select your items : ")
         
             for category,products in self.item_details().items():
@@ -46,15 +45,21 @@ class Shop:#creating class with name of shop
         return self.cart
     def total_items(self):
         print(self.cart)
-        """amount =np.array[self.cart.values()]
-        print(np.amount)
-        self.t_amount = 0
-        for a in self.cart.values():
-            self.t_amount += a
-            break
-        print(self.t_amount)
-        return self.t_amount"""
+        self.amount = sum(self.cart.values())
+        print("Total amount",self.amount)
+        print("1 : Phone pay")
+        print("2 : Google pay")
+        print("3 : cash")
+        choice = int(input("Enter your Payment Method :  "))
+        if choice == 1:
+            print("Go Through with Phone pay")
+        elif choice == 2:
+                    print("Go Through with Google pay")
+        elif choice == 3:
+                    print("Go Through with Cash")
 
+
+        
 c1=Shop()
 
 while True:
@@ -70,8 +75,8 @@ while True:
         print(c1.add_cart())
     elif choice == 3:
         print(c1.total_items())
-        a = o
         
     elif choice == 5:
             print("exiting")
+            print("Thanks for Visiting")
             break
