@@ -8,4 +8,4 @@ data = {
 
 df=pd.DataFrame(data)
 print(df)
-df.to_excel("3_outout.xlsx")
+df.to_csv("3_outout.csv")
